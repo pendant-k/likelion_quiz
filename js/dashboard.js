@@ -1,17 +1,17 @@
 let members = [
-  { name: "최멋사", count: 10, time: "2:30" },
-  { name: "하멋사", count: 10, time: "10:30" },
-  { name: "박멋사", count: 10, time: "3:40" },
-  { name: "김멋사", count: 9, time: "3:56" },
-  { name: "이멋사", count: 8, time: "1:40" },
-  { name: "가멋사", count: 3, time: "2:00" },
-  { name: "나멋사", count: 10, time: "3:40" },
-  { name: "다멋사", count: 9, time: "3:51" },
-  { name: "라멋사", count: 9, time: "1:40" },
-  { name: "마멋사", count: 8, time: "2:01" },
-  { name: "바멋사", count: 4, time: "3:40" },
-  { name: "사멋사", count: 9, time: "3:36" },
-  { name: "아멋사", count: 10, time: "1:40" },
+  { name: "최멋사", count: 10, time: "2:30:12" },
+  { name: "박멋사", count: 10, time: "3:40:32" },
+  { name: "김멋사", count: 9, time: "3:56:40" },
+  { name: "강멋사", count: 9, time: "3:56:39" },
+  { name: "이멋사", count: 8, time: "1:40:24" },
+  { name: "가멋사", count: 3, time: "2:00:56" },
+  { name: "나멋사", count: 10, time: "3:40:23" },
+  { name: "다멋사", count: 9, time: "3:51:45" },
+  { name: "라멋사", count: 9, time: "1:40:23" },
+  { name: "마멋사", count: 8, time: "2:01:09" },
+  { name: "바멋사", count: 4, time: "3:40:12" },
+  { name: "사멋사", count: 9, time: "3:36:67" },
+  { name: "아멋사", count: 10, time: "1:40:34" },
 ];
 
 const cardContainer = document.getElementById("card-container");
@@ -42,7 +42,8 @@ sortedMembers = members.sort(function (a, b) {
 //시간 변경
 for (i = 0; i < members.length; i++) {
   const t = sortedMembers[i].time;
-  const newTime = Number(t[0]) * 60 + Number(t[2] + t[3]);
+  const newTime =
+    Number(t[0]) * 60 + Number(t[2] + t[3]) + 0.01 * Number(t[5] + t[6]);
   sortedMembers[i].newtime = newTime;
 }
 
